@@ -66,7 +66,7 @@ The Stage 2 model produces:
 - **Forward hedge:** locked USD proceeds and effective USD/EUR rate.
 - **Money market hedge:** final USD proceeds; parity residual (USD); IRP-implied forward (USD/EUR).
 - **Options:** put premium in USD (spot and FV); call premium in USD (spot and FV); put break-even S_T; call break-even S_T.
-- **Sensitivity table:** USD proceeds by strategy across eleven ending-spot scenarios from 0.95 × S0_in to 1.05 × S0_in in 1% increments. Columns: Unhedged, Forward, Money Market, Put on EUR, Call on EUR.
+- **Sensitivity table:** USD proceeds by strategy across twenty-one ending-spot scenarios from 0.90 × S0_in to 1.10 × S0_in in 1% increments. Columns: Unhedged, Forward, Money Market, Put on EUR, Call on EUR.
 - **Line chart:** "USD Proceeds by Hedging Strategy across S_T" — five series matching the sensitivity columns, plotted against realized ending spot on the x-axis.
 - **Summary outputs block:** per-strategy USD proceeds KPIs plus a blank `HEDGE RECOMMENDATION` row reserved for the Stage 4 deliverable.
 
@@ -90,7 +90,7 @@ The Stage 2 model produces:
 
 ## 7. Sensitivity Plan
 
-Ending spot rate S_T is varied from **0.95 × S0_in to 1.05 × S0_in in 1% increments**, producing eleven scenarios spanning −5% to +5%. This range captures plausible 1-year EUR/USD drift under normal volatility regimes: 1-year realized volatility of roughly 8–9% implies a one-standard-deviation move in the 8–9% range, so ±5% sits inside one standard deviation and captures the bulk of the realistic distribution.
+Ending spot rate S_T is varied from **0.90 × S0_in to 1.10 × S0_in in 1% increments**, producing twenty-one scenarios spanning −10% to +10%. This range captures plausible 1-year EUR/USD drift under normal volatility regimes — 1-year realized volatility of roughly 8–9% implies a one-standard-deviation move in the 8–9% range, so ±10% spans slightly more than one standard deviation in either direction. Equally important, ±10% ensures that the Put strike (K_PUT = 1.0910, ~5.13% below spot) sits visibly within the protected region of the chart: at S_T ≤ K_PUT the Put line flattens at the floor of $11,464,135, and that flattening must be visible for the chart to communicate the hedge's protective shape. A ±5% range would have placed the strike at the very edge of the grid, hiding the floor.
 
 The sensitivity chart is designed to make four comparisons immediate:
 
